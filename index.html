@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Rent A Car</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/scrpt.js"></script>
+
+    
+  </head>
+<body>
+    <header>
+        <nav  id='nav' class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#"><h1>Rent A Car</h1></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item  home">
+                  <a class="nav-link" href="#"><i class="fa fa-home"></i>Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#"><i class="fa fa-car"></i>Cars</a>
+                </li>
+                <li class="nav-item login">
+                  <a class="nav-link" href="#"><i class="fa fa-sign-in "></i>Login</a>
+                </li>
+              </ul>
+           
+            </div>
+           </nav> 
+    </header>
+    <section id="Login"class="container-fluid">
+      <div class="row" id="img">
+      <div class="col-md-6 col-sm-6 col-lg-6" id="img2"></div>
+      
+
+
+
+
+      <div class="col-md-6 col-sm-6 col-lg-6" id="search"  >
+        <section id="book">
+        <h2 class="sub_head">Book A Car</h2>
+        <section>
+        <input id="NIC" placeholder="Enter Your Cnic" maxlength="14" size="18">
+      </section>
+      <section>
+        <input id="car_name" placeholder="Car Name" maxlength="14" size="18">
+      </section>
+      <section>
+        <input id="make" placeholder="Make" maxlength="14" size="18">
+      </section>
+      <section>
+        <input id="model" placeholder="Model(year)" maxlength="14" size="18">
+      </section>
+      <section>
+        <input id="car_color" placeholder="Color" maxlength="14" size="18">
+      </section>
+      <section>
+        <label for="no_seats">Seats :</label>
+        <select id="no_seats">
+          <option>4</option>
+          <option selected="selected">6</option>
+          <option>7</option>
+        </select>
+      </section>
+      <button id="submit">LOGIN</button>
+    </section>
+      </div>
+
+      
+      <div class="col-md-6 col-sm-6 col-lg-6" >
+        <section id="login">
+        <h2 class="sub_head">Login</h2>
+        <section>
+        <input id="ID" placeholder="ID" maxlength="14" size="18">
+      </section>
+      <section>
+        <input id="pass" placeholder="password" maxlength="14" size="18">
+      </section>
+      <button id="login_sub">LOGIN</button>
+
+      <button id="sign" onclick="window.location.href='/signup.html';">SIGN UP</button>
+    
+    </section>
+      </div>
+
+    </div>
+    </section>
+    
+
+  
+</body>
+
+</html>

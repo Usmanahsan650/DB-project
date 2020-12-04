@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Rent A Car</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- <script src="js/scrpt.js"></script> -->  
+    <script src='js/signup.js'></script>
+    
+  </head>
+<body>
+    <header>
+        <nav  id='nav' class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#"><h1>Rent A Car</h1></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item  home">
+                  <a class="nav-link" href="#"><i class="fa fa-home"></i>Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#"><i class="fa fa-car"></i>Cars</a>
+                </li>
+                <li class="nav-item login">
+                  <a class="nav-link" href="#"><i class="fa fa-sign-in "></i>Login</a>
+                </li>
+              </ul>
+           
+            </div>
+           </nav> 
+    </header>
+    <section class="container-fluid">
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-lg-12" >
+          <section id="signup">
+          <h2 class="sub_head">Signup</h2>
+          <section>
+            <input id="name" placeholder="Name" maxlength="15" size="18">
+          </section>
+          <section>
+            <input id="addr" placeholder="addr" maxlength="20" size="18">
+          </section>
+          <section>
+            <input id="phone" placeholder="phone #" maxlength="11" size="18">
+          </section>
+          <section>
+          <input id="ID" placeholder="Email" maxlength="14" size="18">
+        </section>
+        <section>
+          <input id="pass" placeholder="password" maxlength="14" size="18">
+        </section>
+     
+  
+        <button id="register" onclick="window.location.href='/signup.html';">Register</button>
+      
+      </section>
+        </div>
+      </div>
+    </section>
+<body>
+</body>
+
+</html>

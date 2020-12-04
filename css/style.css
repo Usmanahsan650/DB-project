@@ -1,0 +1,68 @@
+body{
+    background-color: rgb(255, 255, 255);
+}
+#nav{
+    background-color: #f3f332!important;
+    margin-bottom: 2em;
+}
+i{
+    margin-right: 5px;
+}
+label{
+    color: seashell;
+}
+#book,#login,#signup{
+    box-shadow:5px 5px rgba(82, 79, 79, 0.7);
+    width: 60%;
+    background-color: rgba(19, 17, 17, 0.7);
+    margin-left: auto;
+    margin-right: auto;
+   text-align: center;
+   padding-bottom: 5px;
+}
+
+#signup{
+    width :60%;
+}
+
+@media(min-width :526px)
+{
+    #signup {
+        width: 35%;
+    }
+}
+
+
+.sub_head {
+    color: rgb(255, 255, 255);
+}
+#book input{
+    margin-bottom:5px ;
+    background-color: rgb(255, 255, 255);
+}
+#img2{
+    content:url('../car.jpg.webp');
+    opacity: 90%;
+  }
+
+#img2:hover {
+    
+    transform: scale(1.2);     
+  }
+@media (max-width:992px)
+{
+
+
+.nav-link {
+      text-align: center;
+    }
+}
+ 
+@media (min-width:992px)
+{
+  
+    .mr-auto {
+        position: absolute;
+        right: 0;
+    }
+}
