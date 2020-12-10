@@ -24,38 +24,39 @@
             <div class="collapse navbar-collapse" id="navbarText">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item  home">
-                  <a class="nav-link" href="#"><i class="fa fa-home"></i>Home <span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="#home"><i class="fa fa-home"></i>Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#"><i class="fa fa-car"></i>Cars</a>
                 </li>
                 <li class="nav-item login">
-                  <a class="nav-link" href="#"><i class="fa fa-sign-in "></i>Login</a>
+                  <a class="nav-link" href="#login"><i class="fa fa-sign-in "></i>Login</a>
                 </li>
               </ul>
            
             </div>
            </nav> 
     </header>
-    <section id="Login"class="container-fluid">
-      <div class="row" id="img">
+    <section id=""class="container-fluid">
+      <div class="row" id="">
       <div class="col-md-6 col-sm-6 col-lg-6" id="img2"></div>
-      
-
-
-
-
-      <div class="col-md-6 col-sm-6 col-lg-6" id="search"  >
-        <section id="book">
+      <div class="col-md-6 col-sm-6 col-lg-6 pages" id="home"  >
+        <section id="book" class="">
         <h2 class="sub_head">Book A Car</h2>
         <section>
         <input id="NIC" placeholder="Enter Your Cnic" maxlength="14" size="18">
+      </section>
+      <section>
+        <input id="name" placeholder="Name" maxlength="18" size="18">
       </section>
       <section>
         <input id="car_name" placeholder="Car Name" maxlength="14" size="18">
       </section>
       <section>
         <input id="make" placeholder="Make" maxlength="14" size="18">
+      </section>
+      <section>
+        <input id="phone" placeholder="phone" maxlength="11" size="18">
       </section>
       <section>
         <input id="model" placeholder="Model(year)" maxlength="14" size="18">
@@ -71,23 +72,31 @@
           <option>7</option>
         </select>
       </section>
-      <button id="submit">LOGIN</button>
+      <button id="submit">Search</button>
     </section>
       </div>
 
       
-      <div class="col-md-6 col-sm-6 col-lg-6" >
-        <section id="login">
+      <div class="col-md-6 col-sm-6 col-lg-6 pages" id="login" >
+        <section id="">
         <h2 class="sub_head">Login</h2>
         <section>
-        <input id="ID" placeholder="ID" maxlength="14" size="18">
+      <form>
+          <input id="ID" placeholder="ID" maxlength="20" size="18">
       </section>
       <section>
-        <input id="pass" placeholder="password" maxlength="14" size="18">
+        <input id="pass" placeholder="password" autocomplete="on" type="password" maxlength="18" size="18">
       </section>
       <button id="login_sub">LOGIN</button>
+    </form>
+      <form action="signup.html">
+      <button id="sign">SIGN UP</button>
+    </form>
+    <p id="mess" style="color:red"></p>
+    </section>
+      </div>
 
-      <button id="sign" onclick="window.location.href='/html/signup.html';">SIGN UP</button>
+    
     
     </section>
       </div>

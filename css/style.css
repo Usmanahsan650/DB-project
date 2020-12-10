@@ -11,9 +11,15 @@ i{
 label{
     color: seashell;
 }
-#book,#login,#signup{
+input#image{
+    width: 50%;
+
+}
+#book,#login section:first-child,#signup,#reg_car{
     box-shadow:5px 5px rgba(82, 79, 79, 0.7);
     width: 60%;
+    padding-left: 5px;
+    padding-right: 5px;
     background-color: rgba(19, 17, 17, 0.7);
     margin-left: auto;
     margin-right: auto;
@@ -64,5 +70,23 @@ label{
     .mr-auto {
         position: absolute;
         right: 0;
+    }
+}
+
+
+#greet h1,#greet { 
+    font-size: 24px;
+    text-align: center;
+
+}
+td{
+    font-size: 2vw;
+/* word-break:break-all */
+}
+@media (min-width:768px)
+{
+  
+    td{
+        font-size: 1vw;;
     }
 }

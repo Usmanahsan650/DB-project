@@ -26,7 +26,7 @@
      { // echo "<br>Thanks for feedback"
     //  {  echo '<script> alert("success!");</script>';
       $row = $data->fetch_assoc();
-        echo json_encode($row);
+        echo json_encode($row);//return record of logged in user
     }   
       else
       {

@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Rent A Car</title>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="../js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <!-- <script src="js/scrpt.js"></script> -->  
-    <script src='../js/signup.js'></script>
+    <script src='js/signup.js'></script>
     
   </head>
 <body>
@@ -24,26 +24,35 @@
             <div class="collapse navbar-collapse" id="navbarText">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item  home">
-                  <a class="nav-link" href="#"><i class="fa fa-home"></i>Home <span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="index.html"><i class="fa fa-home"></i>Home <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                   <a class="nav-link" href="#"><i class="fa fa-car"></i>Cars</a>
                 </li>
                 <li class="nav-item login">
                   <a class="nav-link" href="#"><i class="fa fa-sign-in "></i>Login</a>
-                </li>
+                </li> -->
               </ul>
            
             </div>
            </nav> 
     </header>
+    <div id="greet">
+    <h1 >fvf</h1>
+    <a href="index.html">back to home page</a>
+    </div>
     <section class="container-fluid">
       <div class="row">
-        <div class="col-md-12 col-sm-12 col-lg-12" >
+        <div class="col-md-12 col-sm-12 col-lg-12 part1" >
+         
           <section id="signup">
+            <form action="">
           <h2 class="sub_head">Signup</h2>
           <section>
             <input id="name" placeholder="Name" maxlength="15" size="18">
+          </section>
+          <section>
+            <input id="ssn" placeholder="ssn" maxlength="15" size="18">
           </section>
           <section>
             <input id="addr" placeholder="addr" maxlength="20" size="18">
@@ -52,15 +61,15 @@
             <input id="phone" placeholder="phone #" maxlength="11" size="18">
           </section>
           <section>
-          <input id="ID" placeholder="Email" maxlength="14" size="18">
+          <input id="ID" placeholder="Email" maxlength="25" size="18">
         </section>
         <section>
-          <input id="pass" placeholder="password" maxlength="14" size="18">
+          <input id="pass" type="password" name="password" autocomplete="on" placeholder="password" maxlength="20" size="18">
         </section>
      
   
         <button id="register" >Register</button>
-      
+      </form>
       </section>
         </div>
       </div>
