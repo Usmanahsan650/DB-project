@@ -12,19 +12,26 @@
     <link rel="stylesheet" href="css/style.css">
     <!-- <script src="js/scrpt.js"></script>   -->
     <script src='js/loggedin.js'></script>
-    
+    <style>
+      body,html{
+        background-color: white!important;
+        background-image: none;
+        
+      }
+    </style>
   </head>
 <body>
+  <main>
     <header>
         <nav  id='nav' class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#"><h1>Rent A Car</h1></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <a class="navbar-brand" href="index.html"><h1 id="title"><div>R</div><div>E</div><div>N</div><div>T </div> <div id="A">A</div> <div>C</div><div>A</div><div>R</div></h1></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarText">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item  home">
-                  <a class="nav-link" href="index.html" id="logout"><i class="fa fa-sign-out"></i>logout<span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="index.html" id="logout"><i class="fa fa-sign-out"><span class="nav_font"> Logout</span></i><span class="sr-only">(current)</span></a>
                 </li>
                 <!-- <li class="nav-item">
                   <a class="nav-link" href="#"><i class="fa fa-car"></i>Cars</a>
@@ -40,20 +47,25 @@
     <div class="container-fluid">
        <div class="row">
          <section class="col-md-6">
-          <div id="greet">
+          <div id="greet" style="text-decoration: underline;">
             <h1 ></h1>
           </div>
           <div>
           </br>
-          <p>Your Cars : </p>
+          <p><b>Your Registered Cars :</b> </p>
           <span id="cars">
                 <section class="table-responsive" id="table" "> 
-
                 </section>
-
           </span>
 
           </div>
+          <span id="delete">
+          
+          <label for="delete" style="color: black;">Remove a Car from Rent</label>
+          <input placeholder="registration_no" name="delete" id="del" required>
+          <input type="submit" id="sub_del">
+  
+      </span>
             <div>
             
               <p>Your Total revenue is : </p>
@@ -67,36 +79,42 @@
             <div id="reg_car">
             <h2 class="sub_head">Car Info</h2>
             <section>
-              <input id="name" placeholder="Name" maxlength="15" size="18">
+              <form action="">
+              <input id="name" class="glowing-border" placeholder="Name" maxlength="15" size="18" required>
             </section>
             <section>
-              <input id="reg_no" placeholder="Registeration_no" maxlength="15" size="18">
+              <input id="reg_no" class="glowing-border" placeholder="Registeration_no" maxlength="15" size="18" required>
+            </section>
+            
+            <section>
+              <input id="make" class="glowing-border" placeholder="make" maxlength="20" size="18" required>
             </section>
             <section>
-              <input id="model" placeholder="model(year)" maxlength="20" size="18">
-            </section>
-            <section>
-              <input id="make" placeholder="make" maxlength="20" size="18">
-            </section>
-            <section>
-              <input id="seats" placeholder="Seats" maxlength="11" size="18">
-            </section>  
-            <section>
-              <input id="rate" placeholder="Rate/day" maxlength="11" size="18">
+              <input id="rate"class="glowing-border" placeholder="Rate/day" maxlength="11" size="18" required>
             </section> 
             <section>
-              <input type="file" id="image" >
+              <input type="number" class="glowing-border" id="model" placeholder="model(year)" maxlength="20" size="18" min="1999" required max="2021"  >
+              <input type="number" class="glowing-border" id="seats" placeholder="Seats" maxlength="11" size="18" min="5" max="12" required >
+            </section>  
+            
+            <section class="container-fluid" id="input-image">
+              <input type="file" class="glowing-border col-lg-12" id="image"  required>
               <div><span id="img_error" style="color: red;"></span></div> 
               <!-- for image error -->
 
             </section>
           <button id="register" >Register</button>
-      </div>
+        </form>
+
+        </div>
            </section>
        </div>
 
     </div>
-    
+  </main>
+  <footer>
+    <h5>Copyrights<i class="fa fa-copyright"></i>Usman Ahsan <br>all rights reserved</h5>
+  </footer>
 
 </body>
 

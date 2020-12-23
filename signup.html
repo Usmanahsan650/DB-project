@@ -15,16 +15,17 @@
     
   </head>
 <body>
+  <main id="mainbg">
     <header>
         <nav  id='nav' class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#"><h1>Rent A Car</h1></a>
+          <a class="navbar-brand" href="index.html"><h1 id="title"><div>R</div><div>E</div><div>N</div><div>T </div> <div id="A">A</div> <div>C</div><div>A</div><div>R</div></h1></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarText">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item  home">
-                  <a class="nav-link" href="index.html"><i class="fa fa-home"></i>Home <span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="index.html"><i class="fa fa-home"><span class="nav_font"> Home</span></i> <span class="sr-only">(current)</span></a>
                 </li>
                 <!-- <li class="nav-item">
                   <a class="nav-link" href="#"><i class="fa fa-car"></i>Cars</a>
@@ -49,31 +50,35 @@
             <form action="">
           <h2 class="sub_head">Signup</h2>
           <section>
-            <input id="name" placeholder="Name" maxlength="15" size="18">
+            <input id="name" class="glowing-border" placeholder="Name" maxlength="15" size="18" required>
           </section>
           <section>
-            <input id="ssn" placeholder="ssn" maxlength="15" size="18">
+            <input id="ssn"class="glowing-border" placeholder="ssn" maxlength="15" size="18" required>
           </section>
           <section>
-            <input id="addr" placeholder="addr" maxlength="20" size="18">
+            <input id="addr" class="glowing-border" placeholder="addr" maxlength="20" size="18" required>
           </section>
           <section>
-            <input id="phone" placeholder="phone #" maxlength="11" size="18">
+            <input id="phone" placeholder="phone #" class="glowing-border"maxlength="11" size="18" required>
           </section>
           <section>
-          <input id="ID" placeholder="Email" maxlength="25" size="18">
+          <input id="ID" placeholder="Email"class="glowing-border" maxlength="25" size="18" required>
         </section>
         <section>
-          <input id="pass" type="password" name="password" autocomplete="on" placeholder="password" maxlength="20" size="18">
+          <input id="pass" type="password" name="password"class="glowing-border" autocomplete="on" placeholder="password" maxlength="20" size="18" required>
         </section>
      
   
-        <button id="register" >Register</button>
+        <button type="submit" id="register" >Register</button>
       </form>
       </section>
         </div>
       </div>
     </section>
+  </main>
+    <footer>
+      <h5>Copyrights<i class="fa fa-copyright"></i>Usman Ahsan <br>all rights reserved</h5>
+    </footer>
 <body>
 </body>
 

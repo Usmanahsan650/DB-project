@@ -6,14 +6,14 @@ document.addEventListener("DOMContentLoaded",function(event){
     document.getElementById("logout").addEventListener("click",function(event){
         window.sessionStorage.removeItem("email");
     })
-
+     
     let user =JSON.parse( window.sessionStorage.getItem("email")); //user object
     let xhttp=new XMLHttpRequest();
     
     xhttp.onreadystatechange=function(event){
         if(this.readyState==4&&this.status==200)
     {
-        console.log(this.response);
+        // console.log(this.response);
         document.querySelector("#table").innerHTML+=this.response;
     }
 
@@ -24,8 +24,33 @@ document.addEventListener("DOMContentLoaded",function(event){
     xhttp.send("X="+user.SSN);
   
     document.querySelector("#greet h1").textContent="Welcome MR."+user.name;
-    document.querySelector("#greet h1").style.color="blue";
+    document.querySelector("#greet h1").style.color="black";
 
+
+
+    document.getElementById("sub_del").addEventListener("click",function(event){ 
+        console.log("gefe");
+        let x=document.getElementById("del").value;
+       
+        let xhr1=new XMLHttpRequest();
+         xhr1.onreadystatechange=function(){
+            if(this.readyState==4&&this.status==200)
+            {
+                console.log(this.response);
+                window.location.reload();
+                // let node=document.createElement("b");
+                // let text=document.createTextNode(this.response);
+                // node.appendChild(text);
+                // document.getElementById("delete").appendChild(node);
+
+            }
+        }
+            
+            xhr1.open("POST","owner_view.php",true);
+            xhr1.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhr1.send("del="+x);
+        
+        })
     //rent car;
     document.querySelector("#register").addEventListener("click",function(event){
         let file=document.getElementById("image").files[0];

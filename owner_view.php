@@ -21,21 +21,26 @@
          if($data->num_rows > 0)
          {
         foreach ($row as $key => $value) {
-                
-                echo "<td>";
+                if($key=="image"||$key=="owner")
+                    continue;
+                echo "<th>";
                 echo "<b>$key</b>";
-                echo "</td>";
+                echo "</th>";
             }
             echo "</tr>";
         do{ 
+            
             echo "<tr>";
              foreach($row as $key => $value)
              {
+                 if($key=="image"||$key=="owner")
+                continue;
+                 
                 echo "<td>";
                 echo $value;
                 echo "</td>";
              }
-              echo "<td style= \" content:url($row[image]) ;width :10vw;height:7vw;\"</td>";
+           echo "<td style= \" content:url($row[image]) ;width :10vw;height:10vw;\"</td>";
         }while($row=$data->fetch_assoc());
 
         echo "</table>";
@@ -51,10 +56,28 @@
         //  }
 
     }
-   else
+   else if(isset($_POST["del"]))
+    {   
+        $reg=$_POST["del"];
+        echo $reg;
+        $sql1="SELECT `image`, `owner` FROM `db_pro`.`car` WHERE `reg_no`='$reg'; ";
+        $data=$con->query($sql1);
+        $row=$data->fetch_assoc();
+       if( unlink($row["image"]))
+       { 
+        $sql="DELETE FROM `db_pro`.`car` WHERE `reg_no`='$reg';";
+        if($con->query($sql))
+        {
+            echo "Removed Your Car !";
+        }
+        else{
+            echo"Error ";
+        }
+    }else
+       echo "Not Found";
+    }else
     {
-        echo "fail";
+    echo "Error 9";
     }
-
     }
 ?>

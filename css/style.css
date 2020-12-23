@@ -1,37 +1,141 @@
-body{
+html,body{
+    height: 96%;
+}
+#mainbg{
+    background-color:rgb(#ffffff,1);
+    background-image: url("../bg.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    position: relative;
+    height: 100%;
+    
+}
+main{
     background-color: rgb(255, 255, 255);
+    height: 100%;
+    overflow: scroll;
+}
+footer{
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+}
+p{
+    margin-bottom: 0.2rem ;
 }
 #nav{
-    background-color: #f3f332!important;
+    opacity: 0.5;
+    background-color: #ffffff!important;
+    
+    background: rgb(0, 0, 0);
     margin-bottom: 2em;
+    font-family: Arial, Helvetica, sans-serif;
+    /* font-weight: bold!important; */
+    box-shadow: 5px 2px #888888;
+    
 }
-i{
+#nav:hover{
+    opacity: 1;
+}
+
+.nav_font{
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+.navbar-light .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0,0,0, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e")
+}
+#title{
+ color:#1b72ff;
+ font-weight: bold!important;
+ display: flex;
+ flex-direction: row;
+ flex-wrap: nowrap;
+}
+#title div{
+    font-weight: 400px;
+    font-size: 2vw;
+    /* background-color:teal; */
+    margin: 0.1vw;
+}
+#title #A{
+    margin-left: 0.7vw ;
+    margin-right: 0.7vw;
+}
+i{ color:#4285f4;
+    
     margin-right: 5px;
 }
 label{
     color: seashell;
 }
 input#image{
-    width: 50%;
+    padding: 0px;
+    width: 100%;
 
 }
+
+
+@media(min-width:992px)
+{
 #book,#login section:first-child,#signup,#reg_car{
     box-shadow:5px 5px rgba(82, 79, 79, 0.7);
     width: 60%;
     padding-left: 5px;
     padding-right: 5px;
-    background-color: rgba(19, 17, 17, 0.7);
+    background-color: rgba(7, 6, 6, 0.7);
     margin-left: auto;
     margin-right: auto;
    text-align: center;
    padding-bottom: 5px;
 }
+}
+#signup,#login section:first-child,#book,#reg_car{
+    width :80%;
+    box-shadow:5px 5px rgba(82, 79, 79, 0.7);
+    padding-left: 5px;
+    padding-right: 5px;
+    background-color: rgba(7, 6, 6, 0.7);
+    margin-left: auto;
+    margin-right: auto;
+   text-align: center;
+   padding-bottom: 5px;
+}
+#Cars{
+    display: flex;
+    justify-content: center;
+    /* text-align: center; */
+    font-weight: bold;
+    font-family:Arial, Helvetica, sans-serif;
+    flex-wrap: wrap;
+   overflow: scroll;
+   height: 500px;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+#Cars div{
+    
+    margin: 10px 5px 10px 5px;
+    align-self: center;
 
-#signup{
-    width :60%;
+}
+@media(min-width :576px) and (max-width :655px)
+{
+    #login section:first-child,#book {
+        width: 70%;
+    }
+}
+.card-title{
+    font-weight: bolder;
+    text-decoration: underline  ;
+}
+.card-img-top{
+    height: 170px;
+}
+.card-body{
+    height: 120px;
 }
 
-@media(min-width :526px)
+@media(min-width:526px)
 {
     #signup {
         width: 35%;
@@ -46,18 +150,31 @@ input#image{
     margin-bottom:5px ;
     background-color: rgb(255, 255, 255);
 }
-#img2{
+/* #img2{
     content:url('../car.jpg.webp');
     opacity: 90%;
-  }
+  } */
 
-#img2:hover {
+#img2:hover ,#title div:hover{
     
     transform: scale(1.2);     
   }
+  #input-image{
+    width: 70%;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+}
 @media (max-width:992px)
 {
-
+    #input-image{
+        width: 100%;
+    }
+    #title div{
+        font-size: 4vw;
+        /* background-color:teal; */
+        margin: 0.1vw;
+    }
 
 .nav-link {
       text-align: center;
@@ -72,12 +189,49 @@ input#image{
         right: 0;
     }
 }
+.glowing-border {
+    border: 2px solid #dadada;
+    border-radius: 7px;
+}
 
+.glowing-border:focus { 
+    outline: none;
+    border-color: #9ecaed;
+    box-shadow: 0 0 10px #9ecaed;
+}
+
+/* #Cars{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    justify-content: center;
+}
+#Cars div{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    background-color: #493232;
+    align-self: center;
+    flex-shrink: 1;
+  flex-basis: 300px;
+  height: 300px;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
+} */
 
 #greet h1,#greet { 
     font-size: 24px;
     text-align: center;
 
+}
+#table{
+    height: 80%;
+    overflow: scroll;
 }
 td{
     font-size: 2vw;
@@ -90,3 +244,21 @@ td{
         font-size: 1vw;;
     }
 }
+::-webkit-scrollbar {
+    width: 2px;
+    position: fixed;
+  }
+::-webkit-scrollbar-thumb {
+    background: rgb(255, 0, 0); 
+    border-radius: 10px;
+  }
+  @media(max-width: 354px){
+  #seats,#model{
+   width: 40%;
+  }
+}
+@media(min-width: 354px){
+    #seats,#model{
+     width: 25%;
+    }
+  }

@@ -6,6 +6,7 @@ if(!$con)
     die("cant connect ". mysqli_connect_error());
 }
 else{
+    // if(mail("usmanahsan650@gmail.com","hello","hi i am php","From: usmanahsan650@gmail.com"))
     $obj=json_decode($_POST["x"],false);
     $sql="SELECT * FROM `db_pro`.`owner` where`email`='$obj->email' and `pass`='$obj->pass';";
     $data=$con->query($sql);

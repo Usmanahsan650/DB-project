@@ -15,29 +15,31 @@
     
   </head>
 <body>
+  <main id="mainbg">
     <header>
-        <nav  id='nav' class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#"><h1>Rent A Car</h1></a>
+        <nav  id='nav' class="navbar navbar-expand-lg navbar-light bg-light  ">
+            <a class="navbar-brand  " href="index.html"><h1 id="title"><div>R</div><div>E</div><div>N</div><div>T </div> <div id="A">A</div> <div>C</div><div>A</div><div>R</div></h1></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarText">
               <ul class="navbar-nav mr-auto">
-                <li class="nav-item  home">
-                  <a class="nav-link" href="#home"><i class="fa fa-home"></i>Home <span class="sr-only">(current)</span></a>
+                <li class="nav-item  home" >
+                  <a class="nav-link" href="#home"><i class="fa fa-home"> <span class="nav_font "> Home</span></i> <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#"><i class="fa fa-car"></i>Cars</a>
+                  <a class="nav-link" href="#Cars"><i class="fa fa-car"><span class="nav_font"> Cars</span></i></a>
                 </li>
                 <li class="nav-item login">
-                  <a class="nav-link" href="#login"><i class="fa fa-sign-in "></i>Login</a>
+                  <a class="nav-link" href="#login"><i class="fa fa-sign-in "><span class="nav_font"> Login</span></i></a>
                 </li>
               </ul>
            
             </div>
            </nav> 
     </header>
-    <section id=""class="container-fluid">
+    
+    <section id="contain"class="container-fluid">
       <div class="row" id="">
       <div class="col-md-6 col-sm-6 col-lg-6" id="img2"></div>
       <div class="col-md-6 col-sm-6 col-lg-6 pages" id="home"  >
@@ -79,33 +81,52 @@
       
       <div class="col-md-6 col-sm-6 col-lg-6 pages" id="login" >
         <section id="">
-        <h2 class="sub_head">Login</h2>
-        <section>
+        <h2 class="sub_head">Login</h2> 
       <form>
-          <input id="ID" placeholder="ID" maxlength="20" size="18">
-      </section>
+          <input id="ID" placeholder="ID" class="glowing-border"  maxlength="25" size="18" required>
       <section>
-        <input id="pass" placeholder="password" autocomplete="on" type="password" maxlength="18" size="18">
+        <input id="pass" class="glowing-border" placeholder="password" autocomplete="on" type="password" maxlength="18" size="18" required>
       </section>
       <button id="login_sub">LOGIN</button>
     </form>
       <form action="signup.html">
-      <button id="sign">SIGN UP</button>
+      <button type="submit" id="sign">SIGN UP</button>
     </form>
     <p id="mess" style="color:red"></p>
     </section>
       </div>
-
-    
-    
-    </section>
-      </div>
-
     </div>
-    </section>
     
-
-  
+    <div class="pages container-fluid" id="Cars">
+    
+   <!-- <div class="card border-dark text-white bg-dark" id="" style="width: 18rem;">
+      
+      <img class="card-img-top" src="" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+      <p id="check">hey</p>
+        <a href="#" class="btn btn-light">Book</a>
+      </div>
+    </div>
+    <div class="card border-dark text-white bg-dark " id="" style="width: 18rem;">
+      
+      <img class="card-img-top" src="" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">BRV</h5>
+        <p class="card-text">Model = 2020</p><p> seats= 8</p><p style="float: left;">Rate=df</p>
+        <a href="#" class="btn btn-light">Book</a>
+      </div>
+    </div> -->
+  </div>
+    </section>
+  </main>
+    <footer>
+      <h5>Copyrights<i class="fa fa-copyright"></i>Usman Ahsan <br>all rights reserved</h5>
+    </footer>
 </body>
 
+<!-- <script>
+let it=document.createElement("br");
+document.getElementById("check").appendChild(it);
+</script> -->
 </html>
