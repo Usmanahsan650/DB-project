@@ -42,42 +42,7 @@
     <section id="contain"class="container-fluid">
       <div class="row" id="">
       <div class="col-md-6 col-sm-6 col-lg-6" id="img2"></div>
-      <div class="col-md-6 col-sm-6 col-lg-6 pages" id="home"  >
-        <section id="book" class="">
-        <h2 class="sub_head">Book A Car</h2>
-        <section>
-        <input id="NIC" placeholder="Enter Your Cnic" maxlength="14" size="18">
-      </section>
-      <section>
-        <input id="name" placeholder="Name" maxlength="18" size="18">
-      </section>
-      <section>
-        <input id="car_name" placeholder="Car Name" maxlength="14" size="18">
-      </section>
-      <section>
-        <input id="make" placeholder="Make" maxlength="14" size="18">
-      </section>
-      <section>
-        <input id="phone" placeholder="phone" maxlength="11" size="18">
-      </section>
-      <section>
-        <input id="model" placeholder="Model(year)" maxlength="14" size="18">
-      </section>
-      <section>
-        <input id="car_color" placeholder="Color" maxlength="14" size="18">
-      </section>
-      <section>
-        <label for="no_seats">Seats :</label>
-        <select id="no_seats">
-          <option>4</option>
-          <option selected="selected">6</option>
-          <option>7</option>
-        </select>
-      </section>
-      <button id="submit">Search</button>
-    </section>
-      </div>
-
+  
       
       <div class="col-md-6 col-sm-6 col-lg-6 pages" id="login" >
         <section id="">
@@ -120,6 +85,41 @@
   </div>
     </section>
   </main>
+   <section class=" pages" id="popup">
+    <div class="col-sm-6 pages" id="bookit"  >
+      <section id="book" class="">
+      <h2 class="sub_head">Book A Car</h2>
+      <form id="book-form">
+      <section>
+      <input id="NIC" placeholder="Enter Your Cnic" maxlength="15" minlength="14" size="18" class="glowing-border" required>
+    </section>
+    <section>
+      <input id="name" placeholder="Name" maxlength="18" size="18" class="glowing-border" required>
+    </section>
+    <section>
+      <input id="address" placeholder="Adress" maxlength="14" size="18" class="glowing-border" required> 
+    </section>
+    <section>
+      <input id="phone" placeholder="phone" maxlength="11" minlength="11" size="18" class="glowing-border" required>
+    </section>
+    <section>
+      <input id="email" placeholder="email" maxlength="25" size="18" class="glowing-border" required>
+    </section>
+    <section>
+      <div >From:</div>
+      <input id="from"   type="date" size="13" class="glowing-border" required>
+    </section>
+    <section>
+      <div >To:<br></div>
+      <input id="to"  type="date" size="15" class="glowing-border" required> 
+    </section>
+    <button id="submit">Book</button>
+  </section>
+  </form>
+    </div>
+</section>
+
+ 
     <footer>
       <h5>Copyrights<i class="fa fa-copyright"></i>Usman Ahsan <br>all rights reserved</h5>
     </footer>

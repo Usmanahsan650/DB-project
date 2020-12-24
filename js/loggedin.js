@@ -27,7 +27,6 @@ document.addEventListener("DOMContentLoaded",function(event){
     document.querySelector("#greet h1").style.color="black";
 
 
-
     document.getElementById("sub_del").addEventListener("click",function(event){ 
         console.log("gefe");
         let x=document.getElementById("del").value;
@@ -53,6 +52,7 @@ document.addEventListener("DOMContentLoaded",function(event){
         })
     //rent car;
     document.querySelector("#register").addEventListener("click",function(event){
+        event.preventDefault();
         let file=document.getElementById("image").files[0];
         if(file.name=="")
         {

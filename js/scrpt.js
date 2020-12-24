@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded",function(event){
     if(window.sessionStorage.getItem("valid")=="0")
     {
-        document.getElementById("mess").textContent="Invalid Username or Password";
+        document.getElementById("mess").textContent="Invalid Username or Password"; //for login         
     }
-    $('div.pages').hide();   //hide all pages with class pages
+    $('.pages').hide();   //hide all pages with class pages
     
      if(window.location.hash)
     $(window.location.hash).show();
@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded",function(event){
             page="home";
         }
         console.log(page);
-        $('div.pages').hide();
+        $('.pages').hide();
         console.log(page.substring(1));
         $("#"+page.substring(1)).show();
     })
@@ -33,14 +33,14 @@ document.addEventListener("DOMContentLoaded",function(event){
     //   cars.forEach((element,number) => {
     //         console.log(number)
     //        element.setAttribute("style","content: url('images/1623.jpg')");
-          
+ let carobj;  
     //   });
         let ajax=new XMLHttpRequest();
         ajax.onreadystatechange=function(){
             if(this.readyState==4 &&this.status==200)
             { console.log(this.response);
               let i=0;
-                let carobj=JSON.parse(this.response);
+                 carobj=JSON.parse(this.response);
               while(carobj[i])
                { let div1=document.createElement("div");// create card 
                 div1.setAttribute("class","card border-dark text-dark bg-light");
@@ -73,6 +73,7 @@ document.addEventListener("DOMContentLoaded",function(event){
                         info.appendChild(span);
                         let aele=document.createElement("a");
                         aele.className="btn btn-dark";
+                        aele.id=carobj[i].reg_no
                         text=document.createTextNode("Book");
                         aele.appendChild(text);
                     
@@ -89,6 +90,94 @@ document.addEventListener("DOMContentLoaded",function(event){
         ajax.open("GET","Car.php",true);
         ajax.send();
 
+        document.querySelector("#Cars").addEventListener("click",function(event){
+            let x =event.target;
+            let button =x.className.split(" ");
+           
+            if(button[0] === "btn")
+            { console.log("hh")
+            $("#popup").show();
+              document.querySelector("main").style.filter="blur(8px)";
+                $("#bookit").show();
+                console.log(x.id);
+                window.sessionStorage.setItem("book-car",x.id);
+            }
+        })
+
+
+        //back
+        document.querySelector("#popup").addEventListener("click",(event)=>{
+            let x=event.target;
+            console.log(x.id);
+            if(event.target.id =="popup" || x.id=="bookit")
+            {
+            $("#popup").hide();
+            document.querySelector("main").style.filter="";
+            }
+        })
+class customer{
+    constructor(){
+            this.name=document.querySelector('#name').value;
+            this.ssn=document.querySelector('#NIC').value;
+            this.phone=document.querySelector("#phone").value;
+            this.email=document.querySelector("#email").value;
+    }
+    store=function() {
+        let cust=new XMLHttpRequest();
+        cust.onreadystatechange=()=>{
+            
+            if(this.status==200&&this.readyState==4)
+            {console.log("store")
+                console.log(this.reponse);
+                return 1;
+            }
+
+        };cust.open("POST","customer.php",true);
+        cust.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        cust.send("x="+JSON.stringify(this));
+
+        
+    }
+}
+        //book car 
+    document.getElementById("book-form").addEventListener("submit",(event)=>{
+        event.preventDefault();
+        let i=0; 
+        while(carobj[i])
+         { 
+             if(carobj[i].reg_no==window.sessionStorage.getItem("book-car"))
+             {
+                 break;
+             }
+            i++;
+         }
+        let form=new FormData();
+        let cust_obj=new customer() ;
+          cust_obj.store()
+         console.log(carobj[i].rate);
+        form.append("from",document.getElementById("from").value);
+        form.append("to",document.getElementById("to").value);
+        form.append("cust_ssn",cust_obj.ssn);
+        form.append("car_reg",carobj[i].reg_no);
+        form.append("rate",carobj[i].rate);
+        form.append("owner",carobj[i].owner);
+        let book= new XMLHttpRequest();
+        book.onreadystatechange=function(){
+            console.log("book")
+            if(this.readyState==4 && this.status==200){
+                    console.log("nice");
+                    alert("You Booked the car sucessfully ");
+                    window.location.reload();
+                if(this.response=='0'){
+                    alert("Sorry couldnt book your car");
+                }
+            }
+        }
+        book.open("POST","book.php",true)
+       // book.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        book.send(form);
+
+    })
 
     // login ajax
      document.getElementById('login_sub').addEventListener("click",function(event){

@@ -1,0 +1,31 @@
+CREATE TABLE customer(
+    cust_ssn  varchar(15) PRIMARY KEY,
+    name varchar(20) ,
+    phone int(11) unsigned,
+    email varchar(25)
+ )
+
+
+ CREATE TABLE booking(
+    From_date date ,
+	to_date date,
+    cust_ssn int(14) unsigned,
+    car_reg varchar(10),
+    bill_no  int(5) unsigned,
+    CONSTRAINT cr_fk FOREIGN KEY("car_reg")
+    REFERENCES car ("reg_no"),   
+    CONSTRAINT cs_fk FOREIGN KEY("cust_ssn")
+    REFERENCES customer ("cust_ssn"),
+    CONSTRAINT bill_fk FOREIGN KEY("bill_no")
+    REFERENCES bill ("bill_no")
+)
+CREATE TABLE bill(
+    bill_no  int(5) unsigned AUTO_INCREMENT PRIMARY KEY,
+    cust_ssn int(15) unsigned ,
+    owner_ssn int(15) unsigned,
+    amount int(5) unsigned ,
+    CONSTRAINT cs_fk FOREIGN KEY(cust_ssn)
+    REFERENCES customer(cust_ssn),
+     CONSTRAINT os_fk FOREIGN KEY(owner_ssn)
+    REFERENCES  owner(SSN)
+)

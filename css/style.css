@@ -262,3 +262,20 @@ td{
      width: 25%;
     }
   }
+
+  #popup{
+      position: absolute;
+      top: 0px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: nowrap;
+      height: 100%;
+      width: 100%;
+  }
+  #bookit{
+      color: white;
+      align-self: center;
+      position: absolute;
+      width: 100%;
+  }
