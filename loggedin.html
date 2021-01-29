@@ -21,7 +21,7 @@
     </style>
   </head>
 <body>
-  <main>
+  <main id="mainbg">
     <header>
         <nav  id='nav' class="navbar navbar-expand-lg navbar-light bg-light">
           <a class="navbar-brand" href="index.html"><h1 id="title"><div>R</div><div>E</div><div>N</div><div>T </div> <div id="A">A</div> <div>C</div><div>A</div><div>R</div></h1></a>
@@ -46,36 +46,38 @@
     </header>
     <div class="container-fluid">
        <div class="row">
-         <section class="col-md-6">
-          <div id="greet" style="text-decoration: underline;">
+         <section class="col-md-6"  >
+          <div id="greet" style="text-decoration: underline; background-color: white;">
             <h1 ></h1>
           </div>
-          <div>
+          <p style="color: white;background-color: rgb(5, 5, 116);width: fit-content;"><b>Your Registered Cars :</b> </p>
+          <div class="container-fluid" id="cars" style="background-color: white;margin-bottom: 10px;" >
           </br>
-          <p><b>Your Registered Cars :</b> </p>
-          <span id="cars">
+          
+          <span >
                 <section class="table-responsive" id="table" "> 
                 </section>
           </span>
 
           </div>
-          <span id="delete">
-          
-          <label for="delete" style="color: black;">Remove a Car from Rent</label>
+          <section class="container-fluid">
+          <span id="delete" style="background-color: rgba(136, 1, 1, 0.842);">          
+          <label for="delete" style="color: black;"><b>Remove a Car from Rent: </b></label>
           <input placeholder="registration_no" name="delete" id="del" required>
           <input type="submit" id="sub_del">
   
       </span>
-            <div>
+            <div style="background-color: white;width: fit-content;">
             
-              <p>Your Total revenue is : </p>
+              <p id="rev"><b>Your Total revenue is :</b> </p>
               <span id="revenue">
                 <p></p>
               </span>
             </div>
+          </section>
            </section>
-           <section class="col-md-6" >
-            <h2 style="text-align: center;">Rent Your Car</h2>
+           <section class="col-md-6"  >
+            <h2 style="text-align: center;color: white;background-color: rgb(5, 5, 116);">Rent Your Car</h2>
             <div id="reg_car">
             <h2 class="sub_head">Car Info</h2>
             <section>

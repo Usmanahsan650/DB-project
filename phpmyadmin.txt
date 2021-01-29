@@ -6,26 +6,31 @@ CREATE TABLE customer(
  )
 
 
+
  CREATE TABLE booking(
+     book_id int  AUTO_INCREMENT NOT null UNIQUE,
     From_date date ,
 	to_date date,
-    cust_ssn int(14) unsigned,
+    cust_ssn varchar(15),
     car_reg varchar(10),
     bill_no  int(5) unsigned,
-    CONSTRAINT cr_fk FOREIGN KEY("car_reg")
-    REFERENCES car ("reg_no"),   
-    CONSTRAINT cs_fk FOREIGN KEY("cust_ssn")
-    REFERENCES customer ("cust_ssn"),
-    CONSTRAINT bill_fk FOREIGN KEY("bill_no")
-    REFERENCES bill ("bill_no")
+     PRIMARY key(FROM_date,to_date,car_reg),
+    CONSTRAINT crb_fk FOREIGN KEY(car_reg)
+    REFERENCES car(reg_no) 
+    ON DELETE CASCADE,   
+    CONSTRAINT csb_fk FOREIGN KEY(cust_ssn) 
+    REFERENCES customer (cust_ssn) on DELETE  cascade on UPDATE CASCADE,
+    CONSTRAINT bill_fk FOREIGN KEY(bill_no)
+    REFERENCES bill (bill_no) on DELETE CASCADE on UPDATE CASCADE
 )
+
 CREATE TABLE bill(
     bill_no  int(5) unsigned AUTO_INCREMENT PRIMARY KEY,
-    cust_ssn int(15) unsigned ,
-    owner_ssn int(15) unsigned,
+    cust_ssn varchar(15)  ,
+    owner_ssn varchar(15) ,
     amount int(5) unsigned ,
     CONSTRAINT cs_fk FOREIGN KEY(cust_ssn)
-    REFERENCES customer(cust_ssn),
+    REFERENCES customer(cust_ssn) on DELETE CASCADE,
      CONSTRAINT os_fk FOREIGN KEY(owner_ssn)
-    REFERENCES  owner(SSN)
+    REFERENCES  owner(SSN) on DELETE CASCADE
 )

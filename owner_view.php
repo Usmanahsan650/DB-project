@@ -13,7 +13,7 @@
         { 
             $userssn=$_POST["X"];
            
-         $sql="SELECT `name`, `reg_no`, `model`, `make`, `seats`, `rate`, `image`, `owner` FROM `db_pro`.`car` WHERE `owner`='$userssn';";
+         $sql="SELECT `name`, `reg_no`, `model`, `make`, `seats`, `rate`, `image` FROM `db_pro`.`car` WHERE `owner`='$userssn';";
          $data=$con->query($sql);
          $row=$data-> fetch_assoc();
          echo "<table align=\"left\" border=\"1\" cellpadding=\"3\" cellspacing=\"0\" class=\"col-md-6\">";
@@ -21,7 +21,7 @@
          if($data->num_rows > 0)
          {
         foreach ($row as $key => $value) {
-                if($key=="image"||$key=="owner")
+                if($key=="image")
                     continue;
                 echo "<th>";
                 echo "<b>$key</b>";
@@ -33,7 +33,7 @@
             echo "<tr>";
              foreach($row as $key => $value)
              {
-                 if($key=="image"||$key=="owner")
+                 if($key=="image")
                 continue;
                  
                 echo "<td>";

@@ -20,9 +20,21 @@ document.addEventListener("DOMContentLoaded",function(event){
     }
     xhttp.open("POST","owner_view.php",true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    console.log(user.SSN);
     xhttp.send("X="+user.SSN);
-  
+
+    
+    //show revenue;
+    var rev=new XMLHttpRequest();
+    rev.onreadystatechange=function(){
+        if(this.readyState==4 &&this.status==200)
+        {   let node=document.getElementById("rev");
+            let text=document.createTextNode(" "+this.response);
+             node.appendChild(text);
+        }
+    }
+      rev.open("GET","revenue.php?ssn="+user.SSN,true);
+      rev.send();
+
     document.querySelector("#greet h1").textContent="Welcome MR."+user.name;
     document.querySelector("#greet h1").style.color="black";
 

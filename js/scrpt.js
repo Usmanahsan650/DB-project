@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded",function(event){
         let ajax=new XMLHttpRequest();
         ajax.onreadystatechange=function(){
             if(this.readyState==4 &&this.status==200)
-            { console.log(this.response);
+            {// console.log(this.response);
               let i=0;
                  carobj=JSON.parse(this.response);
               while(carobj[i])
@@ -115,6 +115,7 @@ document.addEventListener("DOMContentLoaded",function(event){
             document.querySelector("main").style.filter="";
             }
         })
+        var check=0;
 class customer{
     constructor(){
             this.name=document.querySelector('#name').value;
@@ -129,7 +130,7 @@ class customer{
             if(this.status==200&&this.readyState==4)
             {console.log("store")
                 console.log(this.reponse);
-                return 1;
+               check=1;
             }
 
         };cust.open("POST","customer.php",true);
@@ -153,30 +154,49 @@ class customer{
          }
         let form=new FormData();
         let cust_obj=new customer() ;
-          cust_obj.store()
-         console.log(carobj[i].rate);
+          cust_obj.store();
+         
         form.append("from",document.getElementById("from").value);
         form.append("to",document.getElementById("to").value);
         form.append("cust_ssn",cust_obj.ssn);
         form.append("car_reg",carobj[i].reg_no);
+        form.append("c_email",cust_obj.email);
         form.append("rate",carobj[i].rate);
         form.append("owner",carobj[i].owner);
+        if(cust_obj.ssn.length!=15){
+            alert("invalid CNIC");
+            window.location.reload();
+        }
+        else{
         let book= new XMLHttpRequest();
         book.onreadystatechange=function(){
             console.log("book")
             if(this.readyState==4 && this.status==200){
+                console.log(this.response)
+                if(this.response!="1"){
+                    let x=document.createTextNode("Sorry!Try another date");
+                    document.getElementById("error").appendChild(x);
+
+                           
+                }else{
+                    if(check)
+                    {
                     console.log("nice");
                     alert("You Booked the car sucessfully ");
                     window.location.reload();
-                if(this.response=='0'){
-                    alert("Sorry couldnt book your car");
+                    }
+                    else{
+                        console.log("already saved cust");
+                        alert("You Booked the car sucessfully,Thanks for choosing us again ");
+                        window.location.reload();
+                    }
                 }
             }
         }
         book.open("POST","book.php",true)
        // book.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         book.send(form);
-
+    }
     })
 
     // login ajax
@@ -201,7 +221,7 @@ class customer{
                 else{
                     console.log(this.response);
                     window.sessionStorage.setItem("valid","0"); //for front end
-                    window.location.reload();
+                    // window.location.reload();
 
                 }
             }
